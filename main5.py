@@ -13,7 +13,7 @@ def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 120) :
+        if (x < 96) :
             x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
@@ -46,6 +46,6 @@ def draw():
     pyxel.cls(0)
 
     # vaisseau (carre 8x8)
-    pyxel.rect(vaisseau_x, vaisseau_y, 32, 8, 4)
+    pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 4)
 
 pyxel.run(update, draw)
