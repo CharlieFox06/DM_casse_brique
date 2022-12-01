@@ -30,7 +30,8 @@ def balle_deplacement(x, y):
         if (y > 5):
             x = x - 1
             y = y - 1
-    else:
+    elif (y == 5):
+
     return x, y
 
 # =========================================================
