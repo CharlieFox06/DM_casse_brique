@@ -23,9 +23,10 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y):
-    x = x - 1
-    y = y + 1
-    return x,y
+    x = x + 1
+    y = y - 1
+    return x, y
+
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -46,6 +47,7 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
+    
     global vaisseau_x, vaisseau_y, balle_x, balle_y
 
     # vide la fenetre
