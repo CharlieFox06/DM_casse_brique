@@ -19,13 +19,16 @@ def vaisseau_deplacement(x, y):
         if (x > 0) :
             x = x - 1
     if pyxel.btn(pyxel.KEY_DOWN):
-        if (y < 120) :
+        if (y < 40) :
             y = y + 1
     if pyxel.btn(pyxel.KEY_UP):
         if (y > 0) :
             y = y - 1
     return x, y
 
+def obstacles():
+    """compte le score lorsque la balle touche les obstacles"""
+    if vaisseau_deplacement
 
 # =========================================================
 # == UPDATE
