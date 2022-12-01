@@ -26,9 +26,9 @@ def vaisseau_deplacement(x, y):
             y = y - 1
     return x, y
 
-def obstacles():
-    """compte le score lorsque la balle touche les obstacles"""
-    if vaisseau_deplacement
+# def obstacles():
+   # """compte le score lorsque la balle touche les obstacles"""
+   # if vaisseau_deplacement
 
 # =========================================================
 # == UPDATE
