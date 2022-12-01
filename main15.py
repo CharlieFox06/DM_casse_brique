@@ -49,6 +49,6 @@ def draw():
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 6)
     
     # balle (cercle de rayon 4)
-    pyxel.circb(balle_x, balle_y, 4, 2)
+    pyxel.circ(balle_x, balle_y, 4, 3)
 
 pyxel.run(update, draw)
