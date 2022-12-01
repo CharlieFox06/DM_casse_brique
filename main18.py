@@ -23,10 +23,9 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y):
-    while (x < 124):
-        x = x - 1
-        y = y + 1
-
+    x = x - 1
+    y = y + 1
+    return x,y
 # =========================================================
 # == UPDATE
 # =========================================================
