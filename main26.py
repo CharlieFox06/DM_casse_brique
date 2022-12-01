@@ -26,7 +26,7 @@ def balle_deplacement(x, y):
     if (x < 123):
         x = x + 1
         y = y - 1
-    elif (x => 124):
+    elif (x >= 124):
         x = x - 1
         y = y - 1
     return x, y
