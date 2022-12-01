@@ -4,10 +4,12 @@ import pyxel
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
 
-# position initiale du vaisseau
+# position initiale du vaisseau et de la balle
 # (origine des positions : coin haut gauche)
 vaisseau_x = 48
 vaisseau_y = 110
+balle_x = 60
+balle_y = 60
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -20,9 +22,7 @@ def vaisseau_deplacement(x, y):
             x = x - 2
     return x, y
 
-# def obstacles():
-   # """compte le score lorsque la balle touche les obstacles"""
-   # if vaisseau_deplacement
+    
 
 # =========================================================
 # == UPDATE
@@ -45,7 +45,10 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
 
-    # vaisseau (carre 8x8)
+    # vaisseau (rectanle 32x4)
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 6)
+    
+    # balle (cercle de rayon 4)
+    pyxel.circb(balle_x, balle_y, 4, 2)
 
 pyxel.run(update, draw)
