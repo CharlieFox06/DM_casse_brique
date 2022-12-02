@@ -26,9 +26,9 @@ def balle_deplacement(x, y):
     x = x + 1
     y = y - 1
     if (y == 123) or (y == 5):
-        y = -y
+        y = -1 * y
     if (x == 5):
-        x = -x
+        x = -1 * x
     
     return x, y
 
