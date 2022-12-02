@@ -26,14 +26,17 @@ def balle_deplacement(x, y):
     x = x + 1
     y = y - 1
     if (y == 123):
-        x = x - 1
-        y = y - 1
+        for i in range(x):
+            x = x - 1
+            y = y - 1
     if (x == 5):
-        x = x + 1
-        y = y - 1
+        for j in range(y):
+            x = x + 1
+            y = y - 1
     if (y == 5):
-        x = x + 1
-        y = y + 1
+        for k in range(0, 118, -1):
+            x = x + 1
+            y = y + 1
     return x, y
 
 # =========================================================
