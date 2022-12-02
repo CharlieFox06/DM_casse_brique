@@ -16,10 +16,10 @@ def vaisseau_deplacement(x, y):
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 96) :
-            x = x + 2
+            x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
-            x = x - 2
+            x = x - 1
     return x, y
 
 def balle_deplacement(x, y):
