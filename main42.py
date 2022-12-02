@@ -1,4 +1,5 @@
 import pyxel
+import math
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
@@ -23,23 +24,26 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y):
-    for l in range(x, 123, 1):
-        x = x + 1
-        y = y - 1
-    if (x == 123):
-        for i in range(y):
-            x = x - 1
-            y = y - 1
-    if (y == 5):
-        for j in range(x):
-            x = x + 1
-            y = y - 1
-    if (x == 5):
-        for k in range(0, 118, -1):
-            x = x + 1
-            y = y + 1
-    return x, y
+    cos(
 
+#def balle_deplacement(x, y):
+#    for l in range(x, 123, 1):
+#        x = x + 1
+#        y = y - 1
+#    if (x == 123):
+#        for i in range(y):
+#            x = x - 1
+#            y = y - 1
+#    if (y == 5):
+#        for j in range(x):
+#            x = x + 1
+#            y = y - 1
+#    if (x == 5):
+#        for k in range(0, 118, -1):
+#            x = x + 1
+#            y = y + 1
+#    return x, y
+        
 # =========================================================
 # == UPDATE
 # =========================================================
