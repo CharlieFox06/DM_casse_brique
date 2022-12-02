@@ -23,14 +23,14 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y):
-    if (x < 123):
-        x = x + 1
-        y = y - 1
-    elif (x == 124):
-        if (y > 5):
-            x = x - 1
-            y = y - 1
-    elif (y == 5):
+    x = x + 1
+    y = y - 1
+    if (y == 123) or (y == 5):
+        y = -y
+    elif (x == 5):
+        x = -x
+    else:
+        
 
     return x, y
 
