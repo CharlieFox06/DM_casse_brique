@@ -17,19 +17,19 @@ bord_gauche = 4
 bord_droite = 123
 score = 0
 vies = 3
-bord_gauche_briques = 106
+bord_gauche_briques = 101
 bord_droite_briques = 17
-bord_haut_briques = 44
+bord_haut_briques = 39
 bord_bas_briques = 35
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 80):
-            x += 10
+            x += 1
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 15):
-            x -= 10
+            x -= 1
     return x, y
 
 def balle_deplacement(x, y, dx, dy):
