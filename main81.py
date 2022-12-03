@@ -70,5 +70,8 @@ def draw():
     
     # balle (cercle de rayon 4)
     pyxel.circ(balle_x, balle_y, 4, 10)
+    
+    # score
+    pyxel.text(60, 10, f"score: {score}", 0)
 
 pyxel.run(update, draw)
