@@ -17,9 +17,9 @@ bord_gauche = 4
 bord_droite = 123
 score = 0
 vies = 3
-bord_gauche_briques = 101
+bord_gauche_briques = 111
 bord_droite_briques = 17
-bord_haut_briques = 39
+bord_haut_briques = 49
 bord_bas_briques = 35
 
 def vaisseau_deplacement(x, y):
