@@ -73,6 +73,6 @@ def draw():
     pyxel.circ(balle_x, balle_y, 4, 10)
     
     # score
-    pyxel.text(60, 10, f"score: {score}", 7)
+    pyxel.text(95, 2, f"score: {score}", 7)
 
 pyxel.run(update, draw)
