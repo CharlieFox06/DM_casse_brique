@@ -33,7 +33,7 @@ def balle_deplacement(x, y):
         dy = -dy
     if x <= bord_haut:
         dx = -dx
-
+    return x, y
 
         
 # =========================================================
