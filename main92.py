@@ -1,4 +1,5 @@
 import pyxel
+import pygame
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
@@ -20,19 +21,19 @@ score = 990
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 80) :
+        if (x < 80):
             x += 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 15) :
+        if (x > 15):
             x -= 1
     return x, y
-"""
+
 def balle_deplacement(x, y):
     x += dx
     y += dy
     return x, y
-"""
 
+"""
 def balle_deplacement(x, y):
     x += dx
     y += dy
@@ -41,7 +42,7 @@ def balle_deplacement(x, y):
     if x <= bord_haut:
         dx = -dx
     return x, y
-
+"""
         
 # =========================================================
 # == UPDATE
