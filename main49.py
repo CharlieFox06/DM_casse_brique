@@ -16,7 +16,6 @@ dy = 1
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
-
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 96) :
             x += 1
@@ -25,14 +24,7 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
-def balle_deplacement(x, y):
-    x = x + dx
-    y = y + dy
-    if (y < 5) or (y > 123):
-        dy *= -1
-    if (x < 5):
-        dx *= -1
-    return x, y
+
         
 # =========================================================
 # == UPDATE
@@ -40,7 +32,7 @@ def balle_deplacement(x, y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy
+    global vaisseau_x, vaisseau_y, balle_x, balle_y
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
@@ -55,7 +47,7 @@ def update():
 def draw():
     """création des objets (30 fois par seconde)"""
     
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy
+    global vaisseau_x, vaisseau_y, balle_x, balle_y
 
     # vide la fenetre
     pyxel.cls(0)
