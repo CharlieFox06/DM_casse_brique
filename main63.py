@@ -27,7 +27,7 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y):
-    if pyxel.btnr(pyxel.KEY_SPACE)
+    if pyxel.btnr(pyxel.KEY_SPACE):
         x += dx
         y += dy
         if y <= bord_gauche or y >= bord_droite:
