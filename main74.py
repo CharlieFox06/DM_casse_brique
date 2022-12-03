@@ -66,7 +66,7 @@ def draw():
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 12)
     pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+15, vaisseau_x-15, vaisseau_y+15, 12)
     pyxel.tri(vaisseau_x+32, vaisseau_y, vaisseau_x+32, vaisseau_y+15, vaisseau_x+47, vaisseau_y+15, 12)
-    pyxel.rect(vaisseau_x+32, vaisseau_y, 47, 4, 12)
+    pyxel.rect(vaisseau_x, vaisseau_y+32, 47, 4, 12)
     
     # balle (cercle de rayon 4)
     pyxel.circ(balle_x, balle_y, 4, 10)
