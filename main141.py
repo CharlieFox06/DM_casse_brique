@@ -32,7 +32,7 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
-def balle_deplacement(x, y, dx, dy):
+def balle_deplacement(x, y, dx, dy, score):
     x += dx
     y += dy
     if x <= bord_gauche:
@@ -43,19 +43,19 @@ def balle_deplacement(x, y, dx, dy):
         dy = -dy
     
     if x == bord_gauche_briques and bord_bas_briques <= y <= bord_bas_briques:
+        score += 10        
         dx = -dx
-        score += 10
     if x == bord_droite_briques and bord_bas_briques <= y <= bord_bas_briques:
+        score += 10
         dx = -dx
-        score += 10
     if y == bord_haut_briques and bord_droite_briques <= x <= bord_gauche_briques:
-        dy = -dy
         score += 10
+        dy = -dy
     if y == bord_bas_briques and bord_droite_briques <= x <= bord_gauche_briques:
-        dy = -dy
         score += 10
+        dy = -dy
     
-    return x, y, dx, dy
+    return x, y, dx, dy, score
 
 # =========================================================
 # == UPDATE
@@ -63,7 +63,7 @@ def balle_deplacement(x, y, dx, dy):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
@@ -76,7 +76,7 @@ def update():
 def draw():
     """création des objets (30 fois par seconde)"""
     
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score
 
     # vide la fenetre
     pyxel.cls(0)
