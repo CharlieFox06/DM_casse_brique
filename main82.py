@@ -15,6 +15,7 @@ dy = 1
 bord_haut = 5
 bord_gauche = 5
 bord_droite = 123
+score = 0
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
