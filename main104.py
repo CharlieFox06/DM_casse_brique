@@ -15,7 +15,7 @@ dy = -1
 bord_haut = 5
 bord_gauche = 5
 bord_droite = 123
-score = 990
+score = 0
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -68,21 +68,24 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
 
-    # vaisseau (rectanle 32x4)
+    # vaisseau (rectangles) (x, y, taille_x, taille_y, couleur)
+    # vaisseau (triangles) (x1, y1, x2, y2, x3, y3, couleur)
     pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 12)
     pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+15, vaisseau_x-15, vaisseau_y+15, 12)
     pyxel.tri(vaisseau_x+32, vaisseau_y, vaisseau_x+32, vaisseau_y+15, vaisseau_x+47, vaisseau_y+15, 12)
     pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 12)
     
-    # balle (cercle de rayon 4)
+    # balle (cercle) (x, y, rayon, couleur)
     pyxel.circ(balle_x, balle_y, 4, 10)
     
-    # score
+    # score (rectangle) (x, y, "texte", couleur)
     pyxel.text(2, 2, f"score: {score}", 7)
-    # briques
+    
+    # briques (rectangle) (x, y, taille_x, taille_y, couleur)
     pyxel.rect(22, 40, 16, 4, 4) 
     pyxel.rect(39, 40, 16, 4, 4)   
     pyxel.rect(56, 40, 16, 4, 4) 
     pyxel.rect(73, 40, 16, 4, 4) 
     pyxel.rect(90, 40, 16, 4, 4) 
+    
 pyxel.run(update, draw)
