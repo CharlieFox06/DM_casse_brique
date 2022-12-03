@@ -44,12 +44,16 @@ def balle_deplacement(x, y, dx, dy):
     
     if x == bord_gauche_briques and bord_bas_briques <= y <= bord_bas_briques:
         dx = -dx
+        score += 10
     if x == bord_droite_briques and bord_bas_briques <= y <= bord_bas_briques:
         dx = -dx
+        score += 10
     if y == bord_haut_briques and bord_droite_briques <= x <= bord_gauche_briques:
         dy = -dy
+        score += 10
     if y == bord_bas_briques and bord_droite_briques <= x <= bord_gauche_briques:
         dy = -dy
+        score += 10
     
     return x, y, dx, dy
 
