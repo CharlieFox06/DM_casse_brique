@@ -54,7 +54,7 @@ def balle_deplacement(x, y, dx, dy):
     return x, y, dx, dy
 
 def score_timer(score):
-    if balle_y > 128:
+    if balle_y < 128:
         score += 1
     return score
 
