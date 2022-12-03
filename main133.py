@@ -12,8 +12,8 @@ balle_x = 64
 balle_y = 95
 dx = 1
 dy = -1
-bord_haut = 5
-bord_gauche = 5
+bord_haut = 4
+bord_gauche = 4
 bord_droite = 123
 score = 0
 vies = 3
@@ -41,7 +41,7 @@ def balle_deplacement(x, y, dx, dy):
         dx = -dx
     if y <= bord_haut:
         dy = -dy
-    
+    """
     if x <= bord_gauche_briques and bord_bas_briques <= y <= bord_bas_briques:
         dx = -dx
     if x >= bord_droite_briques and bord_bas_briques <= y <= bord_bas_briques:
@@ -50,7 +50,7 @@ def balle_deplacement(x, y, dx, dy):
         dy = -dy
     if y >= bord_bas_briques and bord_droite_briques <= x <= bord_gauche_briques:
         dy = -dy
-        
+    """
     return x, y, dx, dy
 
 # =========================================================
