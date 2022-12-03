@@ -13,6 +13,9 @@ balle_x = 64
 balle_y = 105
 dx = 1
 dy = 1
+bord_haut = 5
+bord_gauche = 5
+bord_droite = 123
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -24,14 +27,13 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
-def balle_deplacement(x, y, dx, dy):
+def balle_deplacement():
     x = x + dx
     y = y + dy
-    if (y < 5) or (y > 123):
-        dy = dy * -1
+    if (y <= bord_gauche) or (y >= bord_droite):
+        dy = -dy
     if (x < 5):
-        dx = dx * -1
-    return x, y, dx, dy
+        dx = -dx
 
 
         
