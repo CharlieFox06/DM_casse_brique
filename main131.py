@@ -17,6 +17,10 @@ bord_gauche = 5
 bord_droite = 123
 score = 0
 vies = 3
+bord_gauche_briques = 106
+bord_droite_briques = 22
+bord_haut_briques = 44
+bord_bas_briques = 40
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -37,6 +41,16 @@ def balle_deplacement(x, y, dx, dy):
         dx = -dx
     if y <= bord_haut:
         dy = -dy
+    
+    if x <= bord_gauche_briques:
+        dx = -dx
+    if x >= bord_droite_briques:
+        dx = -dx
+    if y <= bord_haut_briques:
+        dy = -dy
+    if y >= bord_bas_briques:
+        dy = -dy
+        
     return x, y, dx, dy
 
 # =========================================================
