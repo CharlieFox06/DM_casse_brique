@@ -28,10 +28,10 @@ def balle_deplacement(x, y):
     x = x + dx
     y = y + dy
     if (y < 5) or (y > 123):
-        dy *= -1
+        dy = dy * -1
     if (x < 5):
-        dx *= -1
-    return x, y
+        dx = dx * -1
+    return x, y, dx, dy
 
 
         
