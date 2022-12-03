@@ -80,6 +80,6 @@ def draw():
     # score
     pyxel.text(2, 2, f"score: {score}", 7)
     # briques
-    pyxel.rect(60, 60, 16, 4, 4)
+    pyxel.rect(52, 40, 16, 4, 4)
     
 pyxel.run(update, draw)
