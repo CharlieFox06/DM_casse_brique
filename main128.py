@@ -37,11 +37,11 @@ def balle_deplacement(x, y):
     x += dx
     y += dy
     if x <= bord_gauche:
-        dy = -dy
-    if x >= bord_droite:
-        dy = -dy
-    if y <= bord_haut:
         dx = -dx
+    if x >= bord_droite:
+        dx = -dx
+    if y <= bord_haut:
+        dy = -dy
     return x, y
 
 # =========================================================
