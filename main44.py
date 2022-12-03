@@ -11,38 +11,25 @@ vaisseau_x = 48
 vaisseau_y = 110
 balle_x = 64
 balle_y = 105
+dx = 1
+dy = 1
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 96) :
-            x = x + 1
+            x += 1
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
-            x = x - 1
+            x -= 1
     return x, y
 
-def balle_deplacement(x, y):
-    cos(
-
-#def balle_deplacement(x, y):
-#    for l in range(x, 123, 1):
-#        x = x + 1
-#        y = y - 1
-#    if (x == 123):
-#        for i in range(y):
-#            x = x - 1
-#            y = y - 1
-#    if (y == 5):
-#        for j in range(x):
-#            x = x + 1
-#            y = y - 1
-#    if (x == 5):
-#        for k in range(0, 118, -1):
-#            x = x + 1
-#            y = y + 1
-#    return x, y
+def balle_deplacement(dx, dy):
+    if (y < 5) or (y > 123):
+        dy *= -1
+    if (x < 5):
+        dx *= -1
         
 # =========================================================
 # == UPDATE
