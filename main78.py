@@ -19,10 +19,10 @@ bord_droite = 123
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 96) :
+        if (x < 81) :
             x += 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 0) :
+        if (x > 15) :
             x -= 1
     return x, y
 
