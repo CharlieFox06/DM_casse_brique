@@ -1,4 +1,5 @@
 import pyxel
+#https://kitao.github.io/pyxel/wasm/launcher/?run=CharlieFox06.DM_casse_brique.main162
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
