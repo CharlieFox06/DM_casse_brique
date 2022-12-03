@@ -27,7 +27,7 @@ def vaisseau_deplacement(x, y):
         if (x > 15):
             x -= 1
     return x, y
-
+"""
 def balle_deplacement(x, y):
     x += dx
     y += dy
@@ -42,7 +42,7 @@ def balle_deplacement(x, y):
     if x <= bord_haut:
         dx = -dx
     return x, y
-"""
+
 
 # =========================================================
 # == UPDATE
