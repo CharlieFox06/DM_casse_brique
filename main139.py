@@ -18,9 +18,9 @@ bord_droite = 123
 score = 0
 vies = 3
 bord_gauche_briques = 106
-bord_droite_briques = 22
+bord_droite_briques = 17
 bord_haut_briques = 44
-bord_bas_briques = 40
+bord_bas_briques = 35
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
