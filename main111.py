@@ -27,13 +27,12 @@ def vaisseau_deplacement(x, y):
         if (x > 15):
             x -= 1
     return x, y
-"""
-def balle_deplacement(x, y):
+
+def balle_deplacement_2(x, y):
     x += dx
     y += dy
     return x, y
 
-"""
 def balle_deplacement(x, y):
     if y <= bord_gauche or y >= bord_droite:
         dy = -dy
@@ -55,6 +54,7 @@ def update():
     
     # mise a jour de la position de la balle
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    balle_x, balle_y = balle_deplacement_2(balle_x, balle_y)
 
 # =========================================================
 # == DRAW
