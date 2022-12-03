@@ -26,10 +26,10 @@ def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 80):
-            x += 1
+            x += 10
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 15):
-            x -= 1
+            x -= 10
     return x, y
 
 def balle_deplacement(x, y, dx, dy):
@@ -43,16 +43,12 @@ def balle_deplacement(x, y, dx, dy):
         dy = -dy
     
     if x == bord_gauche_briques and bord_bas_briques <= y <= bord_bas_briques:
-        score += 10        
         dx = -dx
     if x == bord_droite_briques and bord_bas_briques <= y <= bord_bas_briques:
-        score += 10
         dx = -dx
     if y == bord_haut_briques and bord_droite_briques <= x <= bord_gauche_briques:
-        score += 10
         dy = -dy
     if y == bord_bas_briques and bord_droite_briques <= x <= bord_gauche_briques:
-        score += 10
         dy = -dy
     
     return x, y, dx, dy
