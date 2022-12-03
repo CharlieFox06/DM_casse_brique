@@ -83,7 +83,7 @@ def draw():
     pyxel.text(2, 2, f"score: {score}", 7)
     
     # vies (rectangle) (x, y, "texte", couleur)
-    pyxel.text(2, 9, f"vies: {vies}", 7)
+    pyxel.text(2, 8, f"vies: {vies}", 7)
     
     # briques (rectangle) (x, y, taille_x, taille_y, couleur)
     pyxel.rect(22, 40, 16, 4, 4) 
