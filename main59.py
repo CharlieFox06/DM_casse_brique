@@ -1,5 +1,4 @@
 import pyxel
-import math
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
@@ -27,12 +26,12 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
-def balle_deplacement():
-    x = x + dx
-    y = y + dy
-    if (y <= bord_gauche) or (y >= bord_droite):
+def balle_deplacement(x, y):
+    x += dx
+    y += dy
+    if y <= bord_gauche or y >= bord_droite:
         dy = -dy
-    if (x <= bord_haut):
+    if x <= bord_haut:
         dx = -dx
 
 
@@ -49,7 +48,7 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     # mise a jour de la position de la balle
-    balle_deplacement()
+   balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 
 # =========================================================
 # == DRAW
