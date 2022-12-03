@@ -26,6 +26,7 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
+"""
 def balle_deplacement(x, y):
     x += dx
     y += dy
@@ -34,7 +35,7 @@ def balle_deplacement(x, y):
     if x <= bord_haut:
         dx = -dx
     return x, y
-
+"""
         
 # =========================================================
 # == UPDATE
@@ -48,7 +49,7 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     # mise a jour de la position de la balle
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    """ balle_x, balle_y = balle_deplacement(balle_x, balle_y)"""
 
 # =========================================================
 # == DRAW
@@ -62,7 +63,8 @@ def draw():
     pyxel.cls(0)
 
     # vaisseau (rectanle 32x4)
-    pyxel.rect(vaisseau_x, vaisseau_y, 32, 4, 6)
+    pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 6)
+    pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+32, vaisseau_x-16, vaisseau_y+32, 6)
     
     # balle (cercle de rayon 4)
     pyxel.circ(balle_x, balle_y, 4, 3)
