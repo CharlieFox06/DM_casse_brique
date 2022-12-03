@@ -25,14 +25,13 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
-def balle_deplacement(dx, dy):
+def balle_deplacement(x, y):
     x = x + dx
     y = y + dy
     if (y < 5) or (y > 123):
         dy *= -1
     if (x < 5):
         dx *= -1
-        
     return x, y
         
 # =========================================================
