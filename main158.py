@@ -53,10 +53,10 @@ def balle_deplacement(x, y, dx, dy):
     
     return x, y, dx, dy
 
-def score_timer(score, balle_y):
+def score_timer(score):
     while balle_y > 128:
         score += 1
-    return score, balle_y
+    return score
 
 # =========================================================
 # == UPDATE
@@ -72,7 +72,7 @@ def update():
     balle_x, balle_y, dx, dy = balle_deplacement(balle_x, balle_y, dx, dy)
     
     # mise a jour du score (30 par seconde)
-    score, balle_y = score_timer(score, balle_y)
+    score = score_timer(score)
 # =========================================================
 # == DRAW
 # =========================================================
