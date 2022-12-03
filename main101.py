@@ -83,4 +83,6 @@ def draw():
     pyxel.rect(56, 40, 16, 4, 4)   
     pyxel.rect(36, 46, 16, 4, 4) 
     pyxel.rect(76, 46, 16, 4, 4) 
+    pyxel.rect(16, 40, 16, 4, 4) 
+    pyxel.rect(96, 40, 16, 4, 4) 
 pyxel.run(update, draw)
