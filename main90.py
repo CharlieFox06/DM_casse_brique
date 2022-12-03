@@ -2,7 +2,7 @@ import pyxel
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
-pyxel.init(128, 128, title="Nuit du c0de")
+pyxel.init(128, 128, title="Charlie Casse Brique")
 
 # position initiale du vaisseau et de la balle
 # (origine des positions : coin haut gauche)
