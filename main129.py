@@ -33,7 +33,7 @@ def balle_deplacement(x, y):
     y += dy
     return x, y
 """
-def balle_deplacement(x, y):
+def balle_deplacement(x, y, dx, dy):
     x += dx
     y += dy
     if x <= bord_gauche:
@@ -42,7 +42,7 @@ def balle_deplacement(x, y):
         dx = -dx
     if y <= bord_haut:
         dy = -dy
-    return x, y
+    return x, y, dx, dy
 
 # =========================================================
 # == UPDATE
@@ -50,13 +50,12 @@ def balle_deplacement(x, y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, bord_haut, bord_gauche, bord_droite
-
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     # mise a jour de la position de la balle
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    balle_x, balle_y, dx, dy = balle_deplacement(balle_x, balle_y, dx, dy)
 
 # =========================================================
 # == DRAW
@@ -64,7 +63,7 @@ def update():
 def draw():
     """création des objets (30 fois par seconde)"""
     
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, bord_haut, bord_gauche, bord_droite
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy
 
     # vide la fenetre
     pyxel.cls(0)
