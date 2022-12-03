@@ -27,6 +27,12 @@ def vaisseau_deplacement(x, y):
             x -= 1
     return x, y
 
+def balle_deplacement(x, y):
+    for l in range(x, 123, 1):
+        x = x + 1
+        y = y - 1
+    return x, y
+
 """
 def balle_deplacement(x, y):
     x += dx
@@ -50,7 +56,7 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     # mise a jour de la position de la balle
-    """ balle_x, balle_y = balle_deplacement(balle_x, balle_y)"""
+    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 
 # =========================================================
 # == DRAW
