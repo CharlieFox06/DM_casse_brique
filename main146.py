@@ -17,9 +17,9 @@ bord_gauche = 4
 bord_droite = 123
 score = 0
 vies = 3
-bord_gauche_briques = 111
+bord_gauche_briques = 106
 bord_droite_briques = 17
-bord_haut_briques = 49
+bord_haut_briques = 44
 bord_bas_briques = 35
 
 def vaisseau_deplacement(x, y):
@@ -44,11 +44,11 @@ def balle_deplacement(x, y, dx, dy):
     
     if x == bord_gauche_briques and bord_bas_briques <= y <= bord_bas_briques:
         dx = -dx
-    if x == bord_droite_briques and bord_bas_briques <= y <= bord_bas_briques:
+    if x == bord_droite_briques-5 and bord_bas_briques <= y <= bord_bas_briques:
         dx = -dx
     if y == bord_haut_briques and bord_droite_briques <= x <= bord_gauche_briques:
         dy = -dy
-    if y == bord_bas_briques and bord_droite_briques <= x <= bord_gauche_briques:
+    if y == bord_bas_briques-5 and bord_droite_briques <= x <= bord_gauche_briques:
         dy = -dy
     
     return x, y, dx, dy
