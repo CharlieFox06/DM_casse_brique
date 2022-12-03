@@ -11,7 +11,7 @@ vaisseau_y = 100
 balle_x = 64
 balle_y = 95
 dx = 1
-dy = 1
+dy = -1
 bord_haut = 5
 bord_gauche = 5
 bord_droite = 123
@@ -28,8 +28,8 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y):
-    x = x + 1
-    y = y - 1
+    x += dx
+    y += dy
     return x, y
 
 """
