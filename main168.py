@@ -54,9 +54,10 @@ def balle_deplacement(x, y, dx, dy):
     
     return x, y, dx, dy
 
-def bounce_off_top_vaisseau(x, y, dx, dy):
+def bounce_off_top_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if y == vaisseau_y and vaisseau_x <= x <= (vaisseau_x + 32):
         dx = -dx
+    return x, y, dx, dy, vaisseau_x, vaisseau_y
 
 def score_timer(score):
     if balle_y < 128:
@@ -75,12 +76,10 @@ def update():
     
     # mise a jour de la position de la balle
     balle_x, balle_y, dx, dy = balle_deplacement(balle_x, balle_y, dx, dy)
+    balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_top_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
     
     # mise a jour du score (30 par seconde)
     score = score_timer(score)
-    
-    
-    balle_x, balle_y, dx, dy, bord_haut_vaisseau = bounce_off_top_vaisseau(balle_x, balle_y, dx, dy, bord_haut_vaisseau)
     
 # =========================================================
 # == DRAW
