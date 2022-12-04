@@ -17,7 +17,7 @@ bord_haut = 4
 bord_gauche = 4
 bord_droite = 123
 score = 0
-vies = 3
+vies = 1
 bord_gauche_briques = 106
 bord_droite_briques = 22
 bord_haut_briques = 44
@@ -54,9 +54,13 @@ def balle_deplacement(x, y, dx, dy):
     
     return x, y, dx, dy
 
-def bounce_off_top_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
+def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
+    """ rebondi sur le haut du vaisseau """
     if y == (vaisseau_y - 5) and vaisseau_x <= x <= (vaisseau_x + 32):
         dy = -dy
+    """ rebondi sur le triangle gauche du vaisseau """
+    if y and x
+    """ rebondi sur le triangle droit du vaisseau """
     return x, y, dx, dy, vaisseau_x, vaisseau_y
 
 def score_timer(score):
@@ -76,7 +80,7 @@ def update():
     
     # mise a jour de la position de la balle
     balle_x, balle_y, dx, dy = balle_deplacement(balle_x, balle_y, dx, dy)
-    balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_top_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
+    balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
     
     # mise a jour du score (30 par seconde)
     score = score_timer(score)
