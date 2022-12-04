@@ -54,6 +54,10 @@ def balle_deplacement(x, y, dx, dy):
     
     return x, y, dx, dy
 
+def bounce_off_top_vaisseau(x, y, dx, dy, bord_haut_vaisseau):
+    if x == bord_haut_vaisseau:
+        dx = -dx
+
 def score_timer(score):
     if balle_y < 128:
         score += 1
@@ -74,6 +78,10 @@ def update():
     
     # mise a jour du score (30 par seconde)
     score = score_timer(score)
+    
+    
+    balle_x, balle_y, dx, dy, bord_haut_vaisseau = bounce_off_top_vaisseau(balle_x, balle_y, dx, dy, bord_haut_vaisseau)
+    
 # =========================================================
 # == DRAW
 # =========================================================
@@ -87,7 +95,7 @@ def draw():
 
     # vaisseau (rectangles) (x, y, taille_x, taille_y, couleur)
     # vaisseau (triangles) (x1, y1, x2, y2, x3, y3, couleur)
-    pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 12)
+    bord_haut_vaisseau = pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 12)
     pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+15, vaisseau_x-15, vaisseau_y+15, 12)
     pyxel.tri(vaisseau_x+32, vaisseau_y, vaisseau_x+32, vaisseau_y+15, vaisseau_x+47, vaisseau_y+15, 12)
     pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 12)
