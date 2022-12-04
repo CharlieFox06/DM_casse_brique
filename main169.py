@@ -56,7 +56,7 @@ def balle_deplacement(x, y, dx, dy):
 
 def bounce_off_top_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if y == vaisseau_y and vaisseau_x <= x <= (vaisseau_x + 32):
-        dx = -dx
+        dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
 
 def score_timer(score):
