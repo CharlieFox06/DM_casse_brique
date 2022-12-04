@@ -59,8 +59,9 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if y == (vaisseau_y - 5) and vaisseau_x <= x <= (vaisseau_x + 32):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau """
-    if y and x
+    #if y and x
     """ rebondi sur le triangle droit du vaisseau """
+    #if y and x
     return x, y, dx, dy, vaisseau_x, vaisseau_y
 
 def score_timer(score):
