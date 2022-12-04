@@ -23,6 +23,17 @@ bord_droite_briques = 22
 bord_haut_briques = 44
 bord_bas_briques = 40
 
+triangle_gauche_x_1 = vaisseau_x
+triangle_gauche_y_1 = vaisseau_y
+triangle_gauche_x_2 = (vaisseau_x - 15)
+triangle_gauche_y_2 = (vaisseau_y + 15)
+
+triangle_droite_x_1 = (vaisseau_x + 32)
+triangle_droite_y_1 = vaisseau_y
+triangle_droite_x_2 = (vaisseau_x + 47)
+triangle_droite_y_2 = (vaisseau_y + 15)
+
+
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -59,7 +70,9 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if y == (vaisseau_y - 5) and vaisseau_x <= x <= (vaisseau_x + 32):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau """
-    #if y and x
+    if (x == (vaisseau_x - 1) and y == (vaisseau_y + 1)) or (x == (vaisseau_x - 2) and y == (vaisseau_y + 2)) or (x == (vaisseau_x - 3) and y == (vaisseau_y + 3)) or (x == (vaisseau_x - 4) and y == (vaisseau_y + 4)) or (x == (vaisseau_x - 5) and y == (vaisseau_y + 5)) or (x == (vaisseau_x - 6) and y == (vaisseau_y + 6)) or (x == (vaisseau_x - 7) and y == (vaisseau_y + 7)) or (x == (vaisseau_x - 8) and y == (vaisseau_y + 8)) or (x == (vaisseau_x - 9) and y == (vaisseau_y + 9)) or (x == (vaisseau_x - 10) and y == (vaisseau_y + 10)) or (x == (vaisseau_x - 11) and y == (vaisseau_y + 11)) or (x == (vaisseau_x - 12) and y == (vaisseau_y + 12)) or (x == (vaisseau_x - 13) and y == (vaisseau_y + 13)) or (x == (vaisseau_x - 14) and y == (vaisseau_y + 14)) or (x == (vaisseau_x - 15) and y == (vaisseau_y + 15)):
+        dx = -dx
+        dy = -dy
     """ rebondi sur le triangle droit du vaisseau """
     #if y and x
     return x, y, dx, dy, vaisseau_x, vaisseau_y
