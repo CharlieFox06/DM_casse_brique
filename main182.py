@@ -9,6 +9,7 @@ pyxel.init(128, 128, title="Charlie Casse Brique")
 # (origine des positions : coin haut gauche)
 vaisseau_x = 48
 vaisseau_y = 100
+vaisseau_x_2 = vaisseau_x + 32
 balle_x = 64
 balle_y = 95
 dx = 1
@@ -74,7 +75,9 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
         dx = -dx
         dy = -dy
     """ rebondi sur le triangle droit du vaisseau """
-    #if y and x
+     if (x == (vaisseau_x_2 + 1) and y == (vaisseau_y + 1)) or (x == (vaisseau_x_2 + 2) and y == (vaisseau_y + 2)) or (x == (vaisseau_x_2 + 3) and y == (vaisseau_y + 3)) or (x == (vaisseau_x_2 + 4) and y == (vaisseau_y + 4)) or (x == (vaisseau_x_2 + 5) and y == (vaisseau_y + 5)) or (x == (vaisseau_x_2 + 6) and y == (vaisseau_y + 6)) or (x == (vaisseau_x_2 + 7) and y == (vaisseau_y + 7)) or (x == (vaisseau_x_2 + 8) and y == (vaisseau_y + 8)) or (x == (vaisseau_x_2 + 9) and y == (vaisseau_y + 9)) or (x == (vaisseau_x_2 + 10) and y == (vaisseau_y + 10)) or (x == (vaisseau_x_2 + 11) and y == (vaisseau_y + 11)) or (x == (vaisseau_x_2 + 12) and y == (vaisseau_y + 12)) or (x == (vaisseau_x_2 + 13) and y == (vaisseau_y + 13)) or (x == (vaisseau_x_2 + 14) and y == (vaisseau_y + 14)) or (x == (vaisseau_x_2 + 15) and y == (vaisseau_y + 15)):
+        dx = -dx
+        dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
 
 def score_timer(score):
