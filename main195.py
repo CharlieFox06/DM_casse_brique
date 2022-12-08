@@ -39,18 +39,18 @@ def balle_deplacement(x, y, dx, dy):
     y += dy
     if x <= bord_gauche + r:
         dx = -dx
-    if x >= bord_droite - r:
+    if x >= bord_droite - (r+1):
         dx = -dx
     if y <= bord_haut + r:
         dy = -dy
     
     if x == bord_droite_briques and bord_haut_briques <= y <= bord_bas_briques:
         dx = -dx
-    if x == (bord_gauche_briques - r) and bord_haut_briques <= y <= bord_bas_briques:
+    if x == (bord_gauche_briques - (r+1)) and bord_haut_briques <= y <= bord_bas_briques:
         dx = -dx
     if y == (bord_bas_briques + r) and bord_gauche_briques <= x <= bord_droite_briques:
         dy = -dy
-    if y == (bord_haut_briques - r) and bord_gauche_briques <= x <= bord_droite_briques:
+    if y == (bord_haut_briques - (r+1) and bord_gauche_briques <= x <= bord_droite_briques:
         dy = -dy
     
     return x, y, dx, dy
