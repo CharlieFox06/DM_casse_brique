@@ -64,7 +64,7 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
         if y >= (-x + 106 + vaisseau_x) and vaisseau_x - 15 <= x <= vaisseau_x:
             dx = -dx
             dy = -dy
-        elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 - 15 <= x <= vaisseau_x_2:
+        elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
             dx = -dx
             dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
