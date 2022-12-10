@@ -35,10 +35,8 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y, dx, dy):
-    if pyxel.btnr(pyxel.KEY_SPACE):
-        if x < 128:
-            x += dx
-            y += dy
+    x += dx
+    y += dy
     if x <= bord_gauche + r:
         dx = -dx
     if x >= bord_droite - (r+1):
@@ -62,22 +60,24 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if (vaisseau_y + 15 - (r + 1))>= y >= (vaisseau_y - (r + 1)) and vaisseau_x <= x <= (vaisseau_x + 32):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau et sur le triangle droit du vaisseau """
-    #if 106 <= y <= 121:
-    #    if y >= (-x + 106 + vaisseau_x) and vaisseau_x - 15 <= x <= vaisseau_x:
-    #        dx = -dx
-    #        dy = -dy
-    #    elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 <= x <= vaisseau_x_2 + 15:
-    #        dx = -dx
-    #        dy = -dy
-   
-    if  106 <= y <= 121:
-        if ((vaisseau_x - 15) <= x < vaisseau_x) or (vaisseau_x_2 < x <= (vaisseau_x_2 + 15)):
-            dy = -dy
+    if 106 <= y <= 121:
+        if y >= (-x + 106 + vaisseau_x) and vaisseau_x - 15 <= x <= vaisseau_x:
             dx = -dx
-        elif vaisseau_x <= x <= (vaisseau_x +32):
             dy = -dy
+        elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
             dx = -dx
+            dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
+
+    #if  215 <= y <= (238):
+    #   if (vaisseau_x -20) <= x < (vaisseau_x) or (vaisseau_x + 32) < x <= (vaisseau_x + 55):
+    #        ball_y = ball_y + 5
+    #        xball_speed = -xball_speed*1.015
+    #        yball_speed = -yball_speed*1.015
+    #    elif vaisseau_x <= x <= (vaisseau_x +32):
+    #        ball_y = ball_y + 5
+    #        xball_speed = xball_speed*1.015
+    #        yball_speed = -yball_speed*1.015
 
 def score_timer(score):
     if balle_y < 128:
