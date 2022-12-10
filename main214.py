@@ -71,8 +71,10 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if  106 <= y <= 121:
         if ((vaisseau_x - 15) <= x < vaisseau_x) or (vaisseau_x_2 < x <= (vaisseau_x_2 + 15)):
             dy = -dy
+            dx = -dx
         elif vaisseau_x <= x <= (vaisseau_x +32):
             dy = -dy
+            dx = -dx
     return x, y, dx, dy, vaisseau_x, vaisseau_y
 
 def score_timer(score):
