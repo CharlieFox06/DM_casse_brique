@@ -60,20 +60,21 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     if (vaisseau_y + 15 - (r + 1))>= y >= (vaisseau_y - (r + 1)) and vaisseau_x <= x <= (vaisseau_x + 32):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau et sur le triangle droit du vaisseau """
-    if 106 <= y <= 121:
-        if y >= (-x + 106 + vaisseau_x) and vaisseau_x - 15 <= x <= vaisseau_x:
-            dx = -dx
+    #if 106 <= y <= 121:
+    #    if y >= (-x + 106 + vaisseau_x) and vaisseau_x - 15 <= x <= vaisseau_x:
+    #        dx = -dx
+    #        dy = -dy
+    #    elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 <= x <= vaisseau_x_2 + 15:
+    #        dx = -dx
+    #        dy = -dy
+   
+    if  106 <= y <= 121:
+       if ((vaisseau_x - 15) <= x < vaisseau_x) or (vaisseau_x_2 < x <= (vaisseau_x_2 + 15)):
             dy = -dy
-        elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 <= x <= vaisseau_x_2 + 15:
-            dx = -dx
+        elif vaisseau_x <= x <= (vaisseau_x +32):
             dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
 
-    #if  106 <= y <= 121:
-    #   if (vaisseau_x - 20) <= x < (vaisseau_x) or (vaisseau_x + 32) < x <= (vaisseau_x + 55):
-    #        dy = -dy
-    #    elif vaisseau_x <= x <= (vaisseau_x +32):
-    #        dy = -dy
 def score_timer(score):
     if balle_y < 128:
         score += 1
