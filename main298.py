@@ -197,13 +197,15 @@ def draw():
 
         # briques (rectangle) (x, y, taille_x, taille_y, couleur)
 
-        if brique_3 == False:
-            pyxel.rect(56, 40, 16, 4, 0)
-        else:
-            pyxel.rect(22, 40, 16, 4, 4) 
-            pyxel.rect(39, 40, 16, 4, 4)   
-            pyxel.rect(56, 40, 16, 4, 4) 
-            pyxel.rect(73, 40, 16, 4, 4) 
-            pyxel.rect(90, 40, 16, 4, 4) 
+        if brique_1 == True:
+            pyxel.rect(22, 40, 16, 4, 4)
+        elif brique_2 == True:
+            pyxel.rect(39, 40, 16, 4, 4)
+        elif brique_3 == True:
+            pyxel.rect(56, 40, 16, 4, 4)
+        elif brique_4 == True:
+            pyxel.rect(73, 40, 16, 4, 4)
+        elif brique_5 == True:
+            pyxel.rect(90, 40, 16, 4, 4)
 
 pyxel.run(update, draw)
