@@ -161,7 +161,8 @@ def draw():
     
     global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
     
-    if vies <= -1:
+    if vies <= 0:
+        pyxel.text(2, 8, f"vies: {vies}", 7)
         pyxel.text(45,64, 'GAME OVER', 7)
     elif score >= 10001:
         pyxel.text(45,64, 'VICTOIRE!', 7)
