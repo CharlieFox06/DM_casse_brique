@@ -124,7 +124,7 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
 
 def score_timer(score):
     if balle_y < 128:
-        score += 1
+        score += 100
     return score
 
 def vies_counter(vies, x, y, dx, dy):
