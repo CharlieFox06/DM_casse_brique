@@ -223,5 +223,11 @@ def draw():
             pyxel.rect(73, 40, 16, 4, 4)
         if brique_5 == True:
             pyxel.rect(90, 40, 16, 4, 4)
+        if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
+            pyxel.rect(22, 40, 16, 4, 4)
+            pyxel.rect(39, 40, 16, 4, 4)
+            pyxel.rect(56, 40, 16, 4, 4)
+            pyxel.rect(73, 40, 16, 4, 4)
+            pyxel.rect(90, 40, 16, 4, 4)
 
 pyxel.run(update, draw)
