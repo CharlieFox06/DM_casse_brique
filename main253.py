@@ -104,10 +104,10 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau et sur le triangle droit du vaisseau """
     if 106 <= y <= 121:
-        if y >= (-x + 106 + vaisseau_x) and (vaisseau_x - 15 - (r+1)) <= x <= (vaisseau_x - (r+1)):
+        if y >= (-x + 106 + vaisseau_x - (r+1)) and (vaisseau_x - 15 - (r+1)) <= x <= (vaisseau_x - (r+1)):
             dx = -dx
             dy = -dy
-        elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
+        elif y >= (x + 106 - vaisseau_x_2 + 2*(r+1) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
             dx = -dx
             dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
