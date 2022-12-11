@@ -18,12 +18,22 @@ bord_haut = 0
 bord_gauche = 0
 bord_droite = 128
 score = 0
-bord_droite_briques = 106
-bord_gauche_briques = 22
-bord_bas_briques = 44
-bord_haut_briques = 40
 r = 4
-
+b_1_x = 22
+b_1_y = 40
+b_2_x = 39
+b_2_y = 40
+b_3_x = 56
+b_3_y = 40
+b_4_x = 73
+b_4_y = 40
+b_5_x = 90
+b_5_y = 40
+brique_1 = True
+brique_2 = True
+brique_3 = True
+brique_4 = True
+brique_5 = True
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -44,14 +54,31 @@ def balle_deplacement(x, y, dx, dy):
     if y <= bord_haut + r:
         dy = -dy
     
-    if x == (bord_droite_briques + r) and bord_haut_briques <= y <= bord_bas_briques:
-        dx = -dx
-    if x == (bord_gauche_briques - (r+1)) and bord_haut_briques <= y <= bord_bas_briques:
-        dx = -dx
-    if y == (bord_bas_briques + r) and bord_gauche_briques <= x <= bord_droite_briques:
-        dy = -dy
-    if y == (bord_haut_briques - (r+1)) and bord_gauche_briques <= x <= bord_droite_briques:
-        dy = -dy
+    if brique_1 == True:
+        if b_1_x <= x <= (b_1_x + 16):
+            dx = -dx
+        if b_1_y <= y <= (b_1_y + 4):
+            dy = -dy
+    if brique_2 == True:
+        if b_2_x <= x <= (b_1_x + 16):
+            dx = -dx
+        if b_2_y <= y <= (b_1_y + 4):
+            dy = -dy
+    if brique_3 == True:
+        if b_3_x <= x <= (b_1_x + 16):
+            dx = -dx
+        if b_3_y <= y <= (b_1_y + 4):
+            dy = -dy
+    if brique_4 == True:
+        if b_4_x <= x <= (b_1_x + 16):
+            dx = -dx
+        if b_4_y <= y <= (b_1_y + 4):
+            dy = -dy
+    if brique_5 == True:
+        if b_5_x <= x <= (b_1_x + 16):
+            dx = -dx
+        if b_5_y <= y <= (b_1_y + 4):
+            dy = -dy
     
     return x, y, dx, dy
 
