@@ -117,7 +117,7 @@ def score_timer(score):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
@@ -136,7 +136,7 @@ def update():
 def draw():
     """création des objets (30 fois par seconde)"""
     
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
 
     # vide la fenetre
     pyxel.cls(0)
