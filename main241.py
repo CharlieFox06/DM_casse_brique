@@ -183,4 +183,6 @@ def draw():
     pyxel.rect(73, 40, 16, 4, 4) 
     pyxel.rect(90, 40, 16, 4, 4) 
     
+    pyxel.load("sons.pyxres", False, False, True, True)
+    
 pyxel.run(update, draw)
