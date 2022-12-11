@@ -127,6 +127,8 @@ def vies_counter(vies, x, y, dx, dy):
         y = 95
         dx = 1
         dy = -1
+    if vies == 0:
+        pyxel.text(128,128, 'GAME OVER', 7)
     return vies, x, y, dx, dy
 
 # =========================================================
