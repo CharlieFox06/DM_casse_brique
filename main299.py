@@ -199,13 +199,13 @@ def draw():
 
         if brique_1 == True:
             pyxel.rect(22, 40, 16, 4, 4)
-        elif brique_2 == True:
+        if brique_2 == True:
             pyxel.rect(39, 40, 16, 4, 4)
-        elif brique_3 == True:
+        if brique_3 == True:
             pyxel.rect(56, 40, 16, 4, 4)
-        elif brique_4 == True:
+        if brique_4 == True:
             pyxel.rect(73, 40, 16, 4, 4)
-        elif brique_5 == True:
+        if brique_5 == True:
             pyxel.rect(90, 40, 16, 4, 4)
 
 pyxel.run(update, draw)
