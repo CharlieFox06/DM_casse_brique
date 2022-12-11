@@ -88,7 +88,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
         elif y == b_y + 4 + (r+5) and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
     if brique_5 == True:
-        if x == b_5_x and b_y <= y <= b_y + 4 + (r+1):
+        if x == b_5_x and b_y + 4 + (r+1) <= y <= b_y + 4 + (r+1) + (r+1):
             dx = -dx
         elif x == b_5_x + 16 + (r+5) and b_y + 5 <= y <= b_y + 4 + (r+1):
             dx = -dx
