@@ -154,8 +154,11 @@ def draw():
     """création des objets (30 fois par seconde)"""
     
     global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
-
-    if vies > 0: 
+    
+    if vies == 0:
+        pyxel.text(50,50, 'GAME OVER', 7)
+    
+    else: 
         # vide la fenetre
         pyxel.cls(0)
 
@@ -182,7 +185,4 @@ def draw():
         pyxel.rect(73, 40, 16, 4, 4) 
         pyxel.rect(90, 40, 16, 4, 4) 
     
-    else:
-        pyxel.text(50,50, 'GAME OVER', 7)
-
 pyxel.run(update, draw)
