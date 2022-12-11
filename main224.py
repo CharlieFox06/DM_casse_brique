@@ -52,40 +52,49 @@ def balle_deplacement(x, y, dx, dy):
         
     return x, y, dx, dy
 
+    if x == (bord_droite_briques + r) and bord_haut_briques <= y <= bord_bas_briques:
+        dx = -dx
+    if x == (bord_gauche_briques - (r+1)) and bord_haut_briques <= y <= bord_bas_briques:
+        dx = -dx
+    if y == (bord_bas_briques + r) and bord_gauche_briques <= x <= bord_droite_briques:
+        dy = -dy
+    if y == (bord_haut_briques - (r+1)) and bord_gauche_briques <= x <= bord_droite_briques:
+        dy = -dy
+
 def bounce_off_briques(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
     if brique_1 == True:
-        if x == b_1_x or x == (b_1_x + 16):
+        if (x == b_1_x or x == (b_1_x + 16)) and (b_y <= y <= b_y + 4):
             dx = -dx
             brique_1 == False
-        if y == b_y or y == (b_y + 4):
+        if (y == b_y or y == (b_y + 4)) and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
             brique_1 == False
     if brique_2 == True:
-        if x == b_2_x or x == (b_2_x + 16):
+        if (x == b_2_x or x == (b_2_x + 16)) and (b_y <= y <= b_y + 4):
             dx = -dx
             brique_2 == False
-        if y == b_y or y == (b_y + 4):
+        if (y == b_y or y == (b_y + 4)) and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
             brique_2 == False
     if brique_3 == True:
-        if x == b_3_x or x == (b_3_x + 16):
+        if (x == b_3_x or x == (b_3_x + 16)) and (b_y <= y <= b_y + 4):
             dx = -dx
             brique_3 == False
-        if y == b_y or y == (b_y + 4):
+        if (y == b_y or y == (b_y + 4)) and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
             brique_3 == False
     if brique_4 == True:
-        if x == b_4_x or x == (b_4_x + 16):
+        if (x == b_4_x or x == (b_4_x + 16)) and (b_y <= y <= b_y + 4):
             dx = -dx
             brique_4 == False
-        if y == b_y or y == (b_y + 4):
+        if (y == b_y or y == (b_y + 4)) and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
             brique_4 == False
     if brique_5 == True:
-        if x == b_5_x or x == (b_5_x + 16):
+        if (x == b_5_x or x == (b_5_x + 16)) and (b_y <= y <= b_y + 4):
             dx = -dx
             brique_5 == False
-        if y == b_y or y == (b_y + 4):
+        if (y == b_y or y == (b_y + 4)) and b_5_x <= x <= (b_5_x + 16):
             dy = -dy
             brique_5 == False
             
