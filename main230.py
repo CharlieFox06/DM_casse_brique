@@ -121,6 +121,11 @@ def score_timer(score):
     if balle_y < 128:
         score += 1
     return score
+ def vies_counter(vies, x, y):
+    if balle_y <= 128:
+        vies -= 1
+        x = 64
+        y = 95
 
 # =========================================================
 # == UPDATE
@@ -128,7 +133,7 @@ def score_timer(score):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
@@ -136,11 +141,10 @@ def update():
     balle_x, balle_y, dx, dy = balle_deplacement(balle_x, balle_y, dx, dy)
     balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
     balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x = bounce_off_briques(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x)
-
     
     # mise a jour du score (30 par seconde)
     score = score_timer(score)
-    
+    vies, balle_x, balle_y = vies_counter(vies, balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
