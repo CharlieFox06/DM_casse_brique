@@ -19,12 +19,12 @@ bord_gauche = 0
 bord_droite = 128
 score = 0
 r = 4
-b_y = 40
-b_1_x = 22
-b_2_x = 39
-b_3_x = 56
-b_4_x = 73
-b_5_x = 90
+b_y = 40 - (r+1)
+b_1_x = 22 - (r+1)
+b_2_x = 39 - (r+1)
+b_3_x = 56 - (r+1)
+b_4_x = 73 - (r+1)
+b_5_x = 90 - (r+1)
 brique_1 = True
 brique_2 = True
 brique_3 = True
@@ -51,15 +51,6 @@ def balle_deplacement(x, y, dx, dy):
         dy = -dy
         
     return x, y, dx, dy
-
-    if x == (bord_droite_briques + r) and bord_haut_briques <= y <= bord_bas_briques:
-        dx = -dx
-    if x == (bord_gauche_briques - (r+1)) and bord_haut_briques <= y <= bord_bas_briques:
-        dx = -dx
-    if y == (bord_bas_briques + r) and bord_gauche_briques <= x <= bord_droite_briques:
-        dy = -dy
-    if y == (bord_haut_briques - (r+1)) and bord_gauche_briques <= x <= bord_droite_briques:
-        dy = -dy
 
 def bounce_off_briques(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
     if brique_1 == True:
