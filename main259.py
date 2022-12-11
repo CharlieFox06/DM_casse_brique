@@ -12,7 +12,7 @@ vaisseau_y = 100
 vaisseau_x_2 = vaisseau_x + 32
 balle_x = 64
 balle_y = 94
-dx = -1
+dx = 1
 dy = -1
 bord_haut = 0
 bord_gauche = 0
@@ -163,7 +163,8 @@ def draw():
     
     if vies <= 0:
         pyxel.text(45,64, 'GAME OVER', 7)
-    
+    elif score >= 1001:
+        pyxel.text(45,64, 'VICTOIRE!', 7)
     else: 
         # vide la fenetre
         pyxel.cls(0)
