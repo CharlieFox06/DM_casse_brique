@@ -121,7 +121,7 @@ def score_timer(score):
     return score
 
 def vies_counter(vies, x, y):
-    if y <= 128:
+    if y >= 128:
         vies -= 1
         x = 64
         y = 95
