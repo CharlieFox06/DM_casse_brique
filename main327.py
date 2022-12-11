@@ -250,21 +250,21 @@ def draw():
         # briques (rectangle) (x, y, taille_x, taille_y, couleur)
         """disparition des briques lorsqu'elles se font touchées par la balle"""
         if brique_1 == True:
-            pyxel.rect(22, 40, 16, 4, 4)
+            pyxel.rect(22, 40, 16, 4, 11)
         if brique_2 == True:
             pyxel.rect(39, 40, 16, 4, 4)
         if brique_3 == True:
-            pyxel.rect(56, 40, 16, 4, 4)
+            pyxel.rect(56, 40, 16, 4, 9)
         if brique_4 == True:
             pyxel.rect(73, 40, 16, 4, 4)
         if brique_5 == True:
-            pyxel.rect(90, 40, 16, 4, 4)
+            pyxel.rect(90, 40, 16, 4, 11)
         """réapparition des briques si elles sont toutes disparues"""
         if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
-            pyxel.rect(22, 40, 16, 4, 4)
+            pyxel.rect(22, 40, 16, 4, 11)
             pyxel.rect(39, 40, 16, 4, 4)
-            pyxel.rect(56, 40, 16, 4, 4)
+            pyxel.rect(56, 40, 16, 4, 9)
             pyxel.rect(73, 40, 16, 4, 4)
-            pyxel.rect(90, 40, 16, 4, 4)
+            pyxel.rect(90, 40, 16, 4, 11)
 
 pyxel.run(update, draw)
