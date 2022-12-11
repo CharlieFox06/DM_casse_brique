@@ -100,7 +100,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
 
 def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     """ rebondi sur le haut du vaisseau """
-    if (vaisseau_y + 5 - (r + 1))>= y >= (vaisseau_y - (r + 1)) and vaisseau_x <= x <= (vaisseau_x + 32):
+    if (vaisseau_y + 15 - (r + 1))>= y >= (vaisseau_y - (r + 1)) and vaisseau_x <= x <= (vaisseau_x + 32):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau et sur le triangle droit du vaisseau """
     if 106 <= y <= 121:
