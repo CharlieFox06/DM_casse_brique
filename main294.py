@@ -12,7 +12,7 @@ vaisseau_y = 100
 vaisseau_x_2 = vaisseau_x + 32
 balle_x = 64
 balle_y = 94
-dx = 1
+dx = 0
 dy = -1
 bord_haut = 0
 bord_gauche = 0
@@ -72,12 +72,16 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_3 == True:
         if x == b_3_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
+            brique_3 = False
         elif x == b_3_x + 16 + (r+5) and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
+            brique_3 = False
         elif y == b_y and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
+            brique_3 = False
         elif y == b_y + 4 + (r+5) and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
+            brique_3 = False
     if brique_4 == True:
         if x == b_4_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
