@@ -102,10 +102,10 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
             dy = -dy    
     return x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
 
-def brique_disparition(brique_1, brique_2, brique_3, brique_4, brique_5):
-    if brique_3 == False:
-        pyxel.rect(56, 40, 16, 4, 0)
-    return brique_1, brique_2, brique_3, brique_4, brique_5
+#def brique_disparition(brique_1, brique_2, brique_3, brique_4, brique_5):
+#    if brique_3 == False:
+#        pyxel.rect(56, 40, 16, 4, 0)
+#    return brique_1, brique_2, brique_3, brique_4, brique_5
     
 def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     """ rebondi sur le haut du vaisseau """
@@ -158,7 +158,7 @@ def update():
     # mise a jour de la position de la balle
     balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
     balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x = balle_deplacement(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x)
-    brique_1, brique_2, brique_3, brique_4, brique_5 = brique_disparition(brique_1, brique_2, brique_3, brique_4, brique_5)
+#    brique_1, brique_2, brique_3, brique_4, brique_5 = brique_disparition(brique_1, brique_2, brique_3, brique_4, brique_5)
     
     # mise a jour du score et des vies (30 par seconde)
     score = score_timer(score)
@@ -196,10 +196,14 @@ def draw():
         pyxel.text(2, 8, f"vies: {vies}", 7)
 
         # briques (rectangle) (x, y, taille_x, taille_y, couleur)
-        pyxel.rect(22, 40, 16, 4, 4) 
-        pyxel.rect(39, 40, 16, 4, 4)   
-        pyxel.rect(56, 40, 16, 4, 4) 
-        pyxel.rect(73, 40, 16, 4, 4) 
-        pyxel.rect(90, 40, 16, 4, 4) 
-    
+
+        if brique_3 == False:
+            pyxel.rect(56, 40, 16, 4, 0)
+        else:
+            pyxel.rect(22, 40, 16, 4, 4) 
+            pyxel.rect(39, 40, 16, 4, 4)   
+            pyxel.rect(56, 40, 16, 4, 4) 
+            pyxel.rect(73, 40, 16, 4, 4) 
+            pyxel.rect(90, 40, 16, 4, 4) 
+
 pyxel.run(update, draw)
