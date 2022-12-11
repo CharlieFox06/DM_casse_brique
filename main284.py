@@ -52,7 +52,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if y <= bord_haut + r:
         dy = -dy   
     if brique_1 == True:
-        if x == b_1_x and b_y <= y <= b_y + 4:
+        if x == b_1_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
         elif x == b_1_x + 16 + (r+5) and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
