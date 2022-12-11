@@ -43,14 +43,17 @@ def vaisseau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
+    """la balle se deplace de dx en x et de dy en y"""
     x += dx
     y += dy
+    """rebondissements sur les bords du jeu"""
     if x <= bord_gauche + r:
         dx = -dx
     if x >= bord_droite - (r+1):
         dx = -dx
     if y <= bord_haut + r:
         dy = -dy   
+    """rebondissements sur les briques si elles sont présentes"""
     if brique_1 == True:
         if x == b_1_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
@@ -117,11 +120,6 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
             dy = -dy
             brique_5 = False
     return x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
-
-#def brique_disparition(brique_1, brique_2, brique_3, brique_4, brique_5):
-#    if brique_3 == False:
-#        pyxel.rect(56, 40, 16, 4, 0)
-#    return brique_1, brique_2, brique_3, brique_4, brique_5
     
 def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     """ rebondi sur le haut du vaisseau """
@@ -148,11 +146,13 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     #        yball_speed = -yball_speed*1.015
 
 def score_timer(score):
+    """augmente le score au fur et a mesure du temps"""
     if balle_y < 128:
         score += 1
     return score
 
 def vies_counter(vies, x, y, dx, dy):
+    """compte le nombre de vies restantes et arrete le jeu lorsqu'il n'en reste plus"""
     if y >= 128:
         vies -= 1
         x = 64
@@ -168,13 +168,13 @@ def update():
     """mise à jour des variables (30 fois par seconde)"""
 
     global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
+    
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     # mise a jour de la position de la balle
     balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
-    balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x = balle_deplacement(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x)
-#    brique_1, brique_2, brique_3, brique_4, brique_5 = brique_disparition(brique_1, brique_2, brique_3, brique_4, brique_5)
+    balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x = balle_deplacement(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x)   
     
     # mise a jour du score et des vies (30 par seconde)
     score = score_timer(score)
@@ -212,7 +212,7 @@ def draw():
         pyxel.text(2, 8, f"vies: {vies}", 7)
 
         # briques (rectangle) (x, y, taille_x, taille_y, couleur)
-
+        """disparition des briques lorsqu'elles se font touchées par la balle"""
         if brique_1 == True:
             pyxel.rect(22, 40, 16, 4, 4)
         if brique_2 == True:
@@ -223,6 +223,7 @@ def draw():
             pyxel.rect(73, 40, 16, 4, 4)
         if brique_5 == True:
             pyxel.rect(90, 40, 16, 4, 4)
+        """réapparition des briques si elles sont toutes disparues"""
         if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
             pyxel.rect(22, 40, 16, 4, 4)
             pyxel.rect(39, 40, 16, 4, 4)
