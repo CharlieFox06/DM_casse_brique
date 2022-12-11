@@ -11,7 +11,7 @@ vaisseau_x = 48
 vaisseau_y = 100
 vaisseau_x_2 = vaisseau_x + 32
 balle_x = 64
-balle_y = 96
+balle_y = 94
 dx = 1
 dy = -1
 bord_haut = 0
@@ -131,7 +131,7 @@ def vies_counter(vies, x, y, dx, dy):
     if y >= 128:
         vies -= 1
         x = 64
-        y = 96
+        y = 94
         dx = 1
         dy = -1
     return vies, x, y, dx, dy
