@@ -127,8 +127,6 @@ def vies_counter(vies, x, y, dx, dy):
         y = 95
         dx = 1
         dy = -1
-    if vies == 0:
-        pyxel.text(50,50, 'GAME OVER', 7)
     return vies, x, y, dx, dy
 
 # =========================================================
@@ -157,30 +155,34 @@ def draw():
     
     global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
 
-    # vide la fenetre
-    pyxel.cls(0)
+    if vies > 0: 
+        # vide la fenetre
+        pyxel.cls(0)
 
-    # vaisseau (rectangles) (x, y, taille_x, taille_y, couleur)
-    # vaisseau (triangles) (x1, y1, x2, y2, x3, y3, couleur)
-    pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 12)
-    pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+15, vaisseau_x-15, vaisseau_y+15, 12)
-    pyxel.tri(vaisseau_x+32, vaisseau_y, vaisseau_x+32, vaisseau_y+15, vaisseau_x+47, vaisseau_y+15, 12)
-    pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 12)
+        # vaisseau (rectangles) (x, y, taille_x, taille_y, couleur)
+        # vaisseau (triangles) (x1, y1, x2, y2, x3, y3, couleur)
+        pyxel.rect(vaisseau_x, vaisseau_y, 32, 16, 12)
+        pyxel.tri(vaisseau_x, vaisseau_y, vaisseau_x, vaisseau_y+15, vaisseau_x-15, vaisseau_y+15, 12)
+        pyxel.tri(vaisseau_x+32, vaisseau_y, vaisseau_x+32, vaisseau_y+15, vaisseau_x+47, vaisseau_y+15, 12)
+        pyxel.rect(vaisseau_x-15, vaisseau_y+15, 63, 4, 12)
+
+        # balle (cercle) (x, y, rayon, couleur)
+        pyxel.circ(balle_x, balle_y, 4, 10)
+
+        # score (rectangle) (x, y, "texte", couleur)
+        pyxel.text(2, 2, f"score: {score}", 7)
+
+        # vies (rectangle) (x, y, "texte", couleur)
+        pyxel.text(2, 8, f"vies: {vies}", 7)
+
+        # briques (rectangle) (x, y, taille_x, taille_y, couleur)
+        pyxel.rect(22, 40, 16, 4, 4) 
+        pyxel.rect(39, 40, 16, 4, 4)   
+        pyxel.rect(56, 40, 16, 4, 4) 
+        pyxel.rect(73, 40, 16, 4, 4) 
+        pyxel.rect(90, 40, 16, 4, 4) 
     
-    # balle (cercle) (x, y, rayon, couleur)
-    pyxel.circ(balle_x, balle_y, 4, 10)
-    
-    # score (rectangle) (x, y, "texte", couleur)
-    pyxel.text(2, 2, f"score: {score}", 7)
-    
-    # vies (rectangle) (x, y, "texte", couleur)
-    pyxel.text(2, 8, f"vies: {vies}", 7)
-    
-    # briques (rectangle) (x, y, taille_x, taille_y, couleur)
-    pyxel.rect(22, 40, 16, 4, 4) 
-    pyxel.rect(39, 40, 16, 4, 4)   
-    pyxel.rect(56, 40, 16, 4, 4) 
-    pyxel.rect(73, 40, 16, 4, 4) 
-    pyxel.rect(90, 40, 16, 4, 4) 
-    
+    else:
+        pyxel.text(50,50, 'GAME OVER', 7)
+
 pyxel.run(update, draw)
