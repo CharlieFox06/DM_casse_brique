@@ -20,7 +20,7 @@ bord_droite = 128
 score = 0
 r = 4
 vies = 3
-b_y = 40
+b_y = 40 - (r+1)
 b_1_x = 22 - (r+1)
 b_2_x = 39 - (r+1)
 b_3_x = 56 - (r+1)
@@ -54,47 +54,47 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_1 == True:
         if x == b_1_x and b_y <= y <= b_y + 4:
             dx = -dx
-        if x == b_1_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_1_x + 16 and b_y <= y <= b_y + 4:
             dx = -dx
-        if y == b_y and b_1_x <= x <= (b_1_x + 16):
+        elif y == b_y and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
-        if y == b_y + 4 and b_1_x <= x <= (b_1_x + 16):
+        elif y == b_y + 4 and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
     if brique_2 == True:
         if x == b_2_x and b_y <= y <= b_y + 4:
             dx = -dx
-        if x == b_2_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_2_x + 16 and b_y <= y <= b_y + 4:
             dx = -dx
-        if y == b_y and b_2_x <= x <= (b_2_x + 16):
+        elif y == b_y and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
-        if y == b_y + 4 and b_2_x <= x <= (b_2_x + 16):
+        elif y == b_y + 4 and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
     if brique_3 == True:
         if x == b_3_x and b_y <= y <= b_y + 4:
             dx = -dx
-        if x == b_3_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_3_x + 16 and b_y <= y <= b_y + 4:
             dx = -dx
-        if y == b_y and b_3_x <= x <= (b_3_x + 16):
+        elif y == b_y and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
-        if y == b_y + 4 and b_3_x <= x <= (b_3_x + 16):
+        elif y == b_y + 4 and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
     if brique_4 == True:
         if x == b_4_x and b_y <= y <= b_y + 4:
             dx = -dx
-        if x == b_4_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_4_x + 16 and b_y <= y <= b_y + 4:
             dx = -dx
-        if y == b_y and b_4_x <= x <= (b_4_x + 16):
+        elif y == b_y and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
-        if y == b_y + 4 and b_4_x <= x <= (b_4_x + 16):
+        elif y == b_y + 4 and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
     if brique_5 == True:
         if x == b_5_x and b_y <= y <= b_y + 4:
             dx = -dx
-        if x == b_5_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_5_x + 16 and b_y <= y <= b_y + 4:
             dx = -dx
-        if y == b_y and b_5_x <= x <= (b_5_x + 16):
+        elif y == b_y and b_5_x <= x <= (b_5_x + 16):
             dy = -dy
-        if y == b_y + 4 and b_5_x <= x <= (b_5_x + 16):
+        elif y == b_y + 4 and b_5_x <= x <= (b_5_x + 16):
             dy = -dy     
     return x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
 
@@ -104,7 +104,7 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
         dy = -dy
     """ rebondi sur le triangle gauche du vaisseau et sur le triangle droit du vaisseau """
     if 106 <= y <= 121:
-        if y >= (-x + 106 + vaisseau_x - (r+1)) and (vaisseau_x - 15 - (r+1)) <= x <= (vaisseau_x - (r+1)):
+        if y >= (-x + 106 + vaisseau_x) and (vaisseau_x - 15 - (r+1)) <= x <= (vaisseau_x - (r+1)):
             dx = -dx
             dy = -dy
         elif y >= (x + 106 - vaisseau_x_2) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
