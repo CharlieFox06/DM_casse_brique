@@ -125,6 +125,7 @@ def vies_counter(vies, x, y):
         vies -= 1
         x = 64
         y = 95
+        break
     return vies, x, y
 
 # =========================================================
