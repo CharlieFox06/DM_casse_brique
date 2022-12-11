@@ -229,5 +229,10 @@ def draw():
             pyxel.rect(56, 40, 16, 4, 4)
             pyxel.rect(73, 40, 16, 4, 4)
             pyxel.rect(90, 40, 16, 4, 4)
+            brique_1 == True
+            brique_2 == True
+            brique_3 == True
+            brique_4 == True
+            brique_5 == True
 
 pyxel.run(update, draw)
