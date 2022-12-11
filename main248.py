@@ -42,7 +42,7 @@ def vaisseau_deplacement(x, y):
             x -= 2
     return x, y
 
-def balle_deplacement(x, y, dx, dy):
+def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
     x += dx
     y += dy
     if x <= bord_gauche + r:
@@ -50,45 +50,52 @@ def balle_deplacement(x, y, dx, dy):
     if x >= bord_droite - (r+1):
         dx = -dx
     if y <= bord_haut + r:
-        dy = -dy    
-    return x, y, dx, dy
-
-def bounce_off_briques(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
+        dy = -dy   
     if brique_1 == True:
-        if (x == b_1_x or x == (b_1_x + 16)) and (b_y <= y <= b_y + 4):
+        if x == b_1_x and b_y <= y <= b_y + 4:
             dx = -dx
-            brique_1 == False
-        if (y == b_y or y == (b_y + 4)) and b_1_x <= x <= (b_1_x + 16):
+        if x == b_1_x + 16 and b_y <= y <= b_y + 4:
+            dx = -dx
+        if y == b_y and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
-            brique_1 == False
+        if y == b_y + 4 and b_1_x <= x <= (b_1_x + 16):
+            dy = -dy
     if brique_2 == True:
-        if (x == b_2_x or x == (b_2_x + 16)) and (b_y <= y <= b_y + 4):
+        if x == b_2_x and b_y <= y <= b_y + 4:
             dx = -dx
-            brique_2 == False
-        if (y == b_y or y == (b_y + 4)) and b_2_x <= x <= (b_2_x + 16):
+        if x == b_2_x + 16 and b_y <= y <= b_y + 4:
+            dx = -dx
+        if y == b_y and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
-            brique_2 == False
+        if y == b_y + 4 and b_2_x <= x <= (b_2_x + 16):
+            dy = -dy
     if brique_3 == True:
-        if (x == b_3_x or x == (b_3_x + 16)) and (b_y <= y <= b_y + 4):
+        if x == b_3_x and b_y <= y <= b_y + 4:
             dx = -dx
-            brique_3 == False
-        if (y == b_y or y == (b_y + 4)) and b_3_x <= x <= (b_3_x + 16):
+        if x == b_3_x + 16 and b_y <= y <= b_y + 4:
+            dx = -dx
+        if y == b_y and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
-            brique_3 == False
+        if y == b_y + 4 and b_3_x <= x <= (b_3_x + 16):
+            dy = -dy
     if brique_4 == True:
-        if (x == b_4_x or x == (b_4_x + 16)) and (b_y <= y <= b_y + 4):
+        if x == b_4_x and b_y <= y <= b_y + 4:
             dx = -dx
-            brique_4 == False
-        if (y == b_y or y == (b_y + 4)) and b_4_x <= x <= (b_4_x + 16):
+        if x == b_4_x + 16 and b_y <= y <= b_y + 4:
+            dx = -dx
+        if y == b_y and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
-            brique_4 == False
+        if y == b_y + 4 and b_4_x <= x <= (b_4_x + 16):
+            dy = -dy
     if brique_5 == True:
-        if (x == b_5_x or x == (b_5_x + 16)) and (b_y <= y <= b_y + 4):
+        if x == b_5_x and b_y <= y <= b_y + 4:
             dx = -dx
-            brique_5 == False
-        if (y == b_y or y == (b_y + 4)) and b_5_x <= x <= (b_5_x + 16):
+        if x == b_5_x + 16 and b_y <= y <= b_y + 4:
+            dx = -dx
+        if y == b_y and b_5_x <= x <= (b_5_x + 16):
             dy = -dy
-            brique_5 == False       
+        if y == b_y + 4 and b_5_x <= x <= (b_5_x + 16):
+            dy = -dy     
     return x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
 
 def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
@@ -140,9 +147,8 @@ def update():
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
     
     # mise a jour de la position de la balle
-    balle_x, balle_y, dx, dy = balle_deplacement(balle_x, balle_y, dx, dy)
     balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
-    balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x = bounce_off_briques(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x)
+    balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x = balle_deplacement(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x)
     
     # mise a jour du score (30 par seconde)
     score = score_timer(score)
