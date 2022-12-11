@@ -31,6 +31,7 @@ brique_2 = True
 brique_3 = True
 brique_4 = True
 brique_5 = True
+
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -49,8 +50,7 @@ def balle_deplacement(x, y, dx, dy):
     if x >= bord_droite - (r+1):
         dx = -dx
     if y <= bord_haut + r:
-        dy = -dy
-        
+        dy = -dy    
     return x, y, dx, dy
 
 def bounce_off_briques(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
@@ -88,10 +88,8 @@ def bounce_off_briques(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, bri
             brique_5 == False
         if (y == b_y or y == (b_y + 4)) and b_5_x <= x <= (b_5_x + 16):
             dy = -dy
-            brique_5 == False
-            
+            brique_5 == False       
     return x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
-
 
 def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
     """ rebondi sur le haut du vaisseau """
@@ -123,7 +121,7 @@ def score_timer(score):
     return score
 
 def vies_counter(vies, x, y):
-    if balle_y <= 128:
+    if y <= 128:
         vies -= 1
         x = 64
         y = 95
