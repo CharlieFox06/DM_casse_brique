@@ -121,7 +121,7 @@ def score_timer(score):
     if balle_y < 128:
         score += 1
     return score
- def vies_counter(vies, x, y):
+def vies_counter(vies, x, y):
     if balle_y <= 128:
         vies -= 1
         x = 64
@@ -168,7 +168,9 @@ def draw():
     
     # score (rectangle) (x, y, "texte", couleur)
     pyxel.text(2, 2, f"score: {score}", 7)
-    pyxel.text(2, 7, f"vies: {vies}", 7)
+    
+    # vies (rectangle) (x, y, "texte", couleur)
+    pyxel.text(2, 8, f"vies: {vies}", 7)
     
     # briques (rectangle) (x, y, taille_x, taille_y, couleur)
     pyxel.rect(22, 40, 16, 4, 4) 
