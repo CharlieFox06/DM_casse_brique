@@ -65,58 +65,58 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
         elif x == b_1_x + 16 + (r+5) and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_1 = False
-            score += 200
+            score += 100
         elif y == b_y and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
             brique_1 = False
-            score += 300
+            score += 100
         elif y == b_y + 4 + (r+5) and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
             brique_1 = False
-            score += 200
+            score += 100
     if brique_2 == True:
         if x == b_2_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_2 = False
-            score += 100
+            score += 200
         elif x == b_2_x + 16 + (r+5) and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_2 = False
-            score += 100
+            score += 200
         elif y == b_y and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
             brique_2 = False
-            score += 100
+            score += 200
         elif y == b_y + 4 + (r+5) and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
             brique_2 = False
-            score += 100
+            score += 200
     if brique_3 == True:
         if x == b_3_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_3 = False
-            score += 100
+            score += 300
         elif x == b_3_x + 16 + (r+5) and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_3 = False
-            score += 100
+            score += 300
         elif y == b_y and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
             brique_3 = False
-            score += 100
+            score += 300
         elif y == b_y + 4 + (r+5) and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
             brique_3 = False
-            score += 100
+            score += 300
     if brique_4 == True:
         if x == b_4_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_4 = False
-            score += 100
+            score += 200
         elif x == b_4_x + 16 + (r+5) and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
             brique_4 = False
-            score += 100
+            score += 200
         elif y == b_y and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
             brique_4 = False
@@ -124,7 +124,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
         elif y == b_y + 4 + (r+5) and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
             brique_4 = False
-            score += 100
+            score += 200
     if brique_5 == True:
         if x == b_5_x and b_y <= y <= b_y + 4 + (r+1):
             dx = -dx
