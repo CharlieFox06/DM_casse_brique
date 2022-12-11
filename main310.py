@@ -32,6 +32,9 @@ brique_3 = True
 brique_4 = True
 brique_5 = True
 
+#elif raquette_x+r >= x >= raquette_x-50-r and raquette_y + 40 - r >= y >= raquette_y - r and pyxel.pget(x+xx, y+yy) == 2 and yy > 0:
+#        yy = -yy
+
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -150,7 +153,7 @@ def bounce_off_vaisseau(x, y, dx, dy, vaisseau_x, vaisseau_y):
         if y >= (-x + 106 + vaisseau_x - (r+1)) and (vaisseau_x - 15 - (r+1)) <= x <= (vaisseau_x - (r+1)):
             dx = -dx
             dy = -dy
-        elif y >= (x + 106 - vaisseau_x_2 + 2*(r+1)) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
+        elif y <= (x + 106 - vaisseau_x_2 + 2*(r+1)) and vaisseau_x_2 + 15 <= x <= vaisseau_x_2:
             dx = -dx
             dy = -dy
     return x, y, dx, dy, vaisseau_x, vaisseau_y
