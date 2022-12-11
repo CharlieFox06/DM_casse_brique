@@ -54,30 +54,40 @@ def balle_deplacement(x, y, dx, dy):
 
 def bounce_off_briques(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x):
     if brique_1 == True:
-        if b_1_x <= x <= (b_1_x + 16) and ((y == b_y) or (y == (b_y + 4))):
+        if x == b_1_x or x == (b_1_x + 16):
             dx = -dx
-        if b_y <= y <= (b_y + 4) and ((x== b_1_x) or (x== (b_1_x + 16))):
+            brique_1 == False
+        if y == b_y or y == (b_y + 4):
             dy = -dy
+            brique_1 == False
     if brique_2 == True:
-        if b_2_x <= x <= (b_2_x + 16) and ((y == b_y) or (y == (b_y + 4))):
+        if x == b_2_x or x == (b_2_x + 16):
             dx = -dx
-        if b_y <= y <= (b_y + 4) and ((x== b_2_x) or (x== (b_2_x + 16))):
+            brique_2 == False
+        if y == b_y or y == (b_y + 4):
             dy = -dy
+            brique_2 == False
     if brique_3 == True:
-        if b_3_x <= x <= (b_3_x + 16) and ((y == b_y) or (y == (b_y + 4))):
+        if x == b_3_x or x == (b_3_x + 16):
             dx = -dx
-        if b_y <= y <= (b_y + 4) and ((x== b_3_x) or (x== (b_3_x + 16))):
+            brique_3 == False
+        if y == b_y or y == (b_y + 4):
             dy = -dy
+            brique_3 == False
     if brique_4 == True:
-        if b_4_x <= x <= (b_4_x + 16) and ((y == b_y) or (y == (b_y + 4))):
+        if x == b_4_x or x == (b_4_x + 16):
             dx = -dx
-        if b_y <= y <= (b_y + 4) and ((x== b_4_x) or (x== (b_4_x + 16))):
+            brique_4 == False
+        if y == b_y or y == (b_y + 4):
             dy = -dy
+            brique_4 == False
     if brique_5 == True:
-        if b_5_x <= x <= (b_5_x + 16) and ((y == b_y) or (y == (b_y + 4))):
+        if x == b_5_x or x == (b_5_x + 16):
             dx = -dx
-        if b_y <= y <= (b_y + 4) and ((x== b_5_x) or (x== (b_5_x + 16))):
+            brique_5 == False
+        if y == b_y or y == (b_y + 4):
             dy = -dy
+            brique_5 == False
             
     return x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
 
