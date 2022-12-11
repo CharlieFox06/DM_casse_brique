@@ -54,7 +54,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_1 == True:
         if x == b_1_x and b_y <= y <= b_y + 4:
             dx = -dx
-        elif x == b_1_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_1_x + 16 + (r+5) and b_y <= y <= b_y + 4:
             dx = -dx
         elif y == b_y and b_1_x <= x <= (b_1_x + 16):
             dy = -dy
@@ -63,7 +63,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_2 == True:
         if x == b_2_x and b_y <= y <= b_y + 4:
             dx = -dx
-        elif x == b_2_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_2_x + 16 + (r+5) and b_y <= y <= b_y + 4:
             dx = -dx
         elif y == b_y and b_2_x <= x <= (b_2_x + 16):
             dy = -dy
@@ -72,7 +72,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_3 == True:
         if x == b_3_x and b_y <= y <= b_y + 4:
             dx = -dx
-        elif x == b_3_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_3_x + 16 + (r+5) and b_y <= y <= b_y + 4:
             dx = -dx
         elif y == b_y and b_3_x <= x <= (b_3_x + 16):
             dy = -dy
@@ -81,7 +81,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_4 == True:
         if x == b_4_x and b_y <= y <= b_y + 4:
             dx = -dx
-        elif x == b_4_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_4_x + 16 + (r+5) and b_y <= y <= b_y + 4:
             dx = -dx
         elif y == b_y and b_4_x <= x <= (b_4_x + 16):
             dy = -dy
@@ -90,7 +90,7 @@ def balle_deplacement(x, y, dx, dy, brique_1, brique_2, brique_3, brique_4, briq
     if brique_5 == True:
         if x == b_5_x and b_y <= y <= b_y + 4:
             dx = -dx
-        elif x == b_5_x + 16 and b_y <= y <= b_y + 4:
+        elif x == b_5_x + 16 + (r+5) and b_y <= y <= b_y + 4:
             dx = -dx
         elif y == b_y and b_5_x <= x <= (b_5_x + 16):
             dy = -dy
