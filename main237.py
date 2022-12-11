@@ -120,13 +120,14 @@ def score_timer(score):
         score += 1
     return score
 
-def vies_counter(vies, x, y):
+def vies_counter(vies, x, y, dx, dy):
     if y >= 128:
         vies -= 1
         x = 64
         y = 95
-        break
-    return vies, x, y
+        dx = 1
+        dy = -1
+    return vies, x, y, dx, dy
 
 # =========================================================
 # == UPDATE
@@ -145,7 +146,7 @@ def update():
     
     # mise a jour du score (30 par seconde)
     score = score_timer(score)
-    vies, balle_x, balle_y = vies_counter(vies, balle_x, balle_y)
+    vies, balle_x, balle_y, dx, dy = vies_counter(vies, balle_x, balle_y, dx, dy)
 # =========================================================
 # == DRAW
 # =========================================================
