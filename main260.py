@@ -180,7 +180,7 @@ def draw():
         pyxel.circ(balle_x, balle_y, 4, 10)
 
         # score (rectangle) (x, y, "texte", couleur)
-        pyxel.text(2, 2, f"score: {score}", 7)
+        pyxel.text(2, 2, f"score: {score}/1000", 7)
 
         # vies (rectangle) (x, y, "texte", couleur)
         pyxel.text(2, 8, f"vies: {vies}", 7)
