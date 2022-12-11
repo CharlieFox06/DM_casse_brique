@@ -19,6 +19,7 @@ bord_gauche = 0
 bord_droite = 128
 score = 0
 r = 4
+vies = 3
 b_y = 40 - (r+1)
 b_1_x = 22 - (r+1)
 b_2_x = 39 - (r+1)
@@ -163,6 +164,7 @@ def draw():
     
     # score (rectangle) (x, y, "texte", couleur)
     pyxel.text(2, 2, f"score: {score}", 7)
+    pyxel.text(2, 7, f"vies: {vies}", 7)
     
     # briques (rectangle) (x, y, taille_x, taille_y, couleur)
     pyxel.rect(22, 40, 16, 4, 4) 
