@@ -172,7 +172,7 @@ def vies_counter(vies, x, y, dx, dy):
         dy = -1
     return vies, x, y, dx, dy
 
-def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5):
+def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5, niveau):
     """reactualisation des briques lorsquelles sont toutes eliminées, et du niveau"""
     if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
         brique_1 = True
@@ -181,7 +181,7 @@ def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5):
         brique_4 = True
         brique_5 = True
         niveau += 1
-    return brique_1, brique_2, brique_3, brique_4, brique_5
+    return brique_1, brique_2, brique_3, brique_4, brique_5, niveau
 
 # =========================================================
 # == UPDATE
@@ -189,7 +189,7 @@ def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x, niveau
     
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
@@ -199,7 +199,7 @@ def update():
     balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x, score = balle_deplacement(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x, score)   
     
     #mise a jour de la reapparition des briques
-    brique_1, brique_2, brique_3, brique_4, brique_5 = briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5)
+    brique_1, brique_2, brique_3, brique_4, brique_5, niveau = briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5, niveau)
     
     # mise a jour du score et des vies (30 par seconde)
     score = score_timer(score)
@@ -210,7 +210,7 @@ def update():
 def draw():
     """création des objets (30 fois par seconde)"""
     
-    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x
+    global vaisseau_x, vaisseau_y, balle_x, balle_y, dx, dy, score, vies, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x, niveau
     
     if vies <= 0:
         pyxel.text(45,64, 'GAME OVER', 7)
