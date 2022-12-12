@@ -173,13 +173,14 @@ def vies_counter(vies, x, y, dx, dy):
     return vies, x, y, dx, dy
 
 def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5):
-    """reactualisation des briques lorsquelles sont toutes eliminées"""
+    """reactualisation des briques lorsquelles sont toutes eliminées, et du niveau"""
     if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
         brique_1 = True
         brique_2 = True
         brique_3 = True
         brique_4 = True
         brique_5 = True
+        niveau += 1
     return brique_1, brique_2, brique_3, brique_4, brique_5
 
 # =========================================================
