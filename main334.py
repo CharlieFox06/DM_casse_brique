@@ -1,5 +1,5 @@
 import pyxel
-#https://kitao.github.io/pyxel/wasm/launcher/?run=CharlieFox06.DM_casse_brique.main331
+#https://kitao.github.io/pyxel/wasm/launcher/?run=CharlieFox06.DM_casse_brique.main334
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
@@ -174,11 +174,11 @@ def vies_counter(vies, x, y, dx, dy):
 def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5):
     """reactualisation des briques lorsquelles sont toutes eliminées"""
     if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
-        brique_1 == True
-        brique_2 == True
-        brique_3 == True
-        brique_4 == True
-        brique_5 == True
+        brique_1 = True
+        brique_2 = True
+        brique_3 = True
+        brique_4 = True
+        brique_5 = True
     return brique_1, brique_2, brique_3, brique_4, brique_5
 
 # =========================================================
