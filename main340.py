@@ -175,12 +175,13 @@ def vies_counter(vies, x, y, dx, dy):
 def briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5, niveau):
     """reactualisation des briques lorsquelles sont toutes eliminées, et du niveau"""
     if (brique_1 == False) and (brique_2 == False) and (brique_3 == False) and (brique_4 == False) and (brique_5 == False):
+        niveau += 1
         brique_1 = True
         brique_2 = True
         brique_3 = True
         brique_4 = True
         brique_5 = True
-        niveau += 1
+
     return brique_1, brique_2, brique_3, brique_4, brique_5, niveau
 
 # =========================================================
@@ -198,7 +199,7 @@ def update():
     balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y = bounce_off_vaisseau(balle_x, balle_y, dx, dy, vaisseau_x, vaisseau_y)
     balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x, score = balle_deplacement(balle_x, balle_y, dx, dy, brique_1, brique_2, brique_3, brique_4, brique_5, b_y, b_1_x, b_2_x, b_3_x, b_4_x, b_5_x, score)   
     
-    #mise a jour de la reapparition des briques
+    #mise a jour de la reactualisation des briques
     brique_1, brique_2, brique_3, brique_4, brique_5, niveau = briques_reactualisation(brique_1, brique_2, brique_3, brique_4, brique_5, niveau)
     
     # mise a jour du score et des vies (30 par seconde)
