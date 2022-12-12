@@ -235,7 +235,7 @@ def draw():
         # vies (rectangle) (x, y, "texte", couleur)
         pyxel.text(2, 8, f"vies: {vies}", 7)
         
-        pyxel.text(110, 2, f"niveau: {niveau}", 7)
+        pyxel.text(95, 2, f"niveau: {niveau}", 7)
 
         # briques (rectangle) (x, y, taille_x, taille_y, couleur)
         """disparition des briques lorsqu'elles se font touchées par la balle"""
