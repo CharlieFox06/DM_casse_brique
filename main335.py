@@ -20,6 +20,7 @@ bord_droite = 128
 score = 0
 r = 4
 vies = 3
+niveau = 1
 b_y = 40 - (r+1)
 b_1_x = 22 - (r+1)
 b_2_x = 39 - (r+1)
@@ -233,6 +234,8 @@ def draw():
 
         # vies (rectangle) (x, y, "texte", couleur)
         pyxel.text(2, 8, f"vies: {vies}", 7)
+        
+        pyxel.text(110, 2, f"niveau: {niveau}", 7)
 
         # briques (rectangle) (x, y, taille_x, taille_y, couleur)
         """disparition des briques lorsqu'elles se font touchées par la balle"""
